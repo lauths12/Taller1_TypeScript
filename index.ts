@@ -1,15 +1,15 @@
 import { Serie } from './serie.js';
 import { dataSeries } from './data.js';
 
-const seriesTableBody = document.getElementById('series') as HTMLTableSectionElement;
-const averageSeasons = document.getElementById('averageSeasons') as HTMLParagraphElement;
+let seriesTableBody = document.getElementById('series') as HTMLTableSectionElement;
+let averageSeasons = document.getElementById('averageSeasons') as HTMLParagraphElement;
 
 loadSeriesTable(dataSeries);
 averageSeasons.innerHTML = `<b>Seasons average:</b> ${calculateAverage(dataSeries)}`;
 
 function loadSeriesTable(series: Serie[]) {
   series.forEach((serie, index) => {
-    const tr = document.createElement('tr');
+    let tr = document.createElement('tr');
     tr.innerHTML = `
       <td><b>${index + 1}</b></td>
       <td><a href="${serie.getImage()}" target="_blank">${serie.getName()}</a></td>
@@ -21,6 +21,6 @@ function loadSeriesTable(series: Serie[]) {
 }
 
 function calculateAverage(series: Serie[]) {
-  const totalSeasons = series.reduce((sum, serie) => sum + serie.getSeasons(), 0);
+  let totalSeasons = series.reduce((sum, serie) => sum + serie.getSeasons(), 0);
   return (totalSeasons / series.length)
 }
