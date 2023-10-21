@@ -1,4 +1,2 @@
 # Taller1_TypeScript
-Laura Julieth Carretero Serrano
-202214922
-l.carretero
+LINK PÁG: https://lauths12.github.io/Taller1_TypeScript/
